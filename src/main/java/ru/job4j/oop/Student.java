@@ -1,16 +1,18 @@
 package ru.job4j.oop;
 
 public class Student {
-    public void song(){
+    public void song() {
         System.out.println("I believe i can fly");
         System.out.println("I believe i can fly");
         System.out.println("I believe i can fly");
     }
+
     public void music() {
         System.out.println("Tra tra tra");
         System.out.println("Tra tra tra");
         System.out.println("Tra tra tra");
     }
+
     public static void main(String[] args) {
         Student petya = new Student();
         petya.music();
