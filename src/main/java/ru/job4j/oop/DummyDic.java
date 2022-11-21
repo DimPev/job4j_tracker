@@ -3,12 +3,12 @@ package ru.job4j.oop;
 public class DummyDic {
 
     String engToRus(String eng) {
-        String wordEng = eng + "unknown word";
-        return wordEng;
+         return "Неизвестное слово. " + eng;
+
     }
 
     public static void main(String[] args) {
         DummyDic newWord = new DummyDic();
-        System.out.println(newWord.engToRus("Неизвестное слово. "));
+        System.out.println(newWord.engToRus("eng"));
     }
 }
