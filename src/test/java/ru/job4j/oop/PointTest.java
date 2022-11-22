@@ -43,10 +43,28 @@ public class PointTest {
     }
 
     @Test
-    public void when20to20then0() {
+    public void when10to10then0() {
         double expected = 0;
         Point a = new Point(1, 0);
         Point b = new Point(1, 0);
+        double out = a.distance(b);
+        Assert.assertEquals(expected, out, 0.01);
+    }
+
+    @Test
+    public void when202to022then2dot8() {
+        double expected = 2.8;
+        Point a = new Point(2, 0, 2);
+        Point b = new Point(0, 2, 2);
+        double out = a.distance(b);
+        Assert.assertEquals(expected, out, 0.1);
+    }
+
+    @Test
+    public void when100to100then0() {
+        double expected = 0;
+        Point a = new Point(1, 0, 0);
+        Point b = new Point(1, 0, 0);
         double out = a.distance(b);
         Assert.assertEquals(expected, out, 0.01);
     }
