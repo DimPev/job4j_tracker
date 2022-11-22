@@ -5,7 +5,7 @@ public class Calculator {
     private static int x = 5;
 
     public static int minus(int y) {
-        return x - y;
+        return y - x;
     }
 
     public static int multiply(int y) {
@@ -13,7 +13,7 @@ public class Calculator {
     }
 
     public int divide(int y) {
-        return x / y;
+        return y / x;
     }
 
     public static int sum(int y) {
@@ -32,7 +32,7 @@ public class Calculator {
         System.out.println(result);
         result = multiply(12);
         System.out.println(result);
-        result = calculator.divide(1);
+        result = calculator.divide(25);
         System.out.println(result);
         result = calculator.sumAllOperation(123);
         System.out.println(result);
