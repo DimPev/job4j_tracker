@@ -12,15 +12,13 @@ public class Battery {
     }
 
     public void exchange(Battery another) {
-
-        another.load += getLoad();
-        this.load -= getLoad();
+        another.load += this.load;
+        this.load = 0;
     }
 
     public static void main(String[] args) {
         Battery first = new Battery(4);
         Battery second = new Battery(2);
-
         first.exchange(second);
         System.out.println("first : " + first.load + ". second : " + second.load);
 
