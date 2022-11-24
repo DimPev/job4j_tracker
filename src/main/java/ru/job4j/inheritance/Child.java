@@ -1,4 +1,4 @@
-package inheritance;
+package ru.job4j.inheritance;
 
 public class Child extends Parent {
     private String patronymic;

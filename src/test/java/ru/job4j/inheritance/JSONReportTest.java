@@ -1,6 +1,5 @@
 package ru.job4j.inheritance;
 
-import inheritance.JSONReport;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
