@@ -120,6 +120,6 @@ public class TrackerTest {
         };
         StartUI.delete(new StubInput(answers), tracker);
         Item edited = tracker.findById(item.getId());
-        assertThat(edited= null);
+        assertThat(edited = null);
     }
 }
