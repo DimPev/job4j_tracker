@@ -76,16 +76,6 @@ public class TrackerTest {
     }
 
     @Test
-    public void whenDeleteItemIsSuccessful() {
-        Tracker tracker = new Tracker();
-        Item item = new Item("Bug");
-        tracker.add(item);
-        int id = item.getId();
-        tracker.delete(id);
-        assertThat(tracker.findById(id)).isNull();
-    }
-
-    @Test
     public void whenDeleteItemIsNotSuccessful() {
         Tracker tracker = new Tracker();
         Item item = new Item("Bug");
@@ -95,31 +85,4 @@ public class TrackerTest {
         assertThat(result).isFalse();
     }
 
-    @Test
-    public void whenEditItem() {
-        Tracker tracker = new Tracker();
-        Item item = new Item("new item");
-        tracker.add(item);
-        String[] answers = {
-                String.valueOf(item.getId()),
-                "edited item"
-        };
-        StartUI.replace(new StubInput(answers), tracker);
-        Item edited = tracker.findById(item.getId());
-        assertThat(edited.getName()).isEqualTo("edited item");
-    }
-
-    @Test
-    public void whenDeleteItem() {
-        Tracker tracker = new Tracker();
-        Item item = new Item("new item");
-        tracker.add(item);
-        int id = item.getId();
-        String[] answers = {
-                String.valueOf(item.getId()),
-                "edited item"
-        };
-        StartUI.delete(new StubInput(answers), tracker);
-        assertThat(tracker.findById(id)).isNull();
-    }
 }
