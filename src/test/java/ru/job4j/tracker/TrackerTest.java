@@ -114,12 +114,12 @@ public class TrackerTest {
         Tracker tracker = new Tracker();
         Item item = new Item("new item");
         tracker.add(item);
+        int id = item.getId();
         String[] answers = {
                 String.valueOf(item.getId()),
                 "edited item"
         };
         StartUI.delete(new StubInput(answers), tracker);
-        Item edited = tracker.findById(item.getId());
-        assertThat(edited = null);
+        assertThat(tracker.findById(id)).isNull();
     }
 }
