@@ -24,10 +24,8 @@ public class StartUI {
 
     public static void replace(Input input, Tracker tracker) {
         System.out.println("=== Edit item ===");
-        System.out.print("Enter id: ");
-        int id = Integer.parseInt(input.askStr(""));
-        System.out.print("Enter name: ");
-        String name = input.askStr("");
+        int id = Integer.parseInt(input.askStr("Enter id: "));
+        String name = input.askStr("Enter name: ");
         Item item = new Item(name);
         if (tracker.replace(id, item)) {
             System.out.println("Заявка изменена успешно.");
@@ -38,8 +36,7 @@ public class StartUI {
 
     public static void delete(Input input, Tracker tracker) {
         System.out.println("=== Delete item ===");
-        System.out.print("Enter id: ");
-        int id = Integer.parseInt(input.askStr(""));
+        int id = Integer.parseInt(input.askStr("Enter id: "));
         if (tracker.delete(id)) {
             System.out.println("Заявка удалена успешно.");
         } else {
@@ -49,8 +46,7 @@ public class StartUI {
 
     public static void findById(Input input, Tracker tracker) {
         System.out.println("=== Find item by id ===");
-        System.out.print("Enter id: ");
-        int id = Integer.parseInt(input.askStr(""));
+        int id = Integer.parseInt(input.askStr("Enter id: "));
         Item item = tracker.findById(id);
         if (item != null) {
             System.out.println(item);
@@ -61,8 +57,7 @@ public class StartUI {
 
     public static void findByName(Input input, Tracker tracker) {
         System.out.println("=== Find items by name ===");
-        System.out.print("Enter name: ");
-        String name = input.askStr("");
+        String name = input.askStr("Enter name: ");
         Item[] items = tracker.findByName(name);
         if (items.length > 0) {
             for (Item item : items) {
@@ -77,7 +72,6 @@ public class StartUI {
         boolean run = true;
         while (run) {
             showMenu();
-            System.out.print("Select: ");
             int select = input.askInt("Select: ");
             if (select == 0) {
                 StartUI.createItem(input, tracker);
