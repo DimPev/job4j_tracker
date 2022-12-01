@@ -10,7 +10,6 @@ public class StartUI {
         System.out.println("Добавленная заявка: " + item);
     }
 
-
     public static void findAll(Input input, Tracker tracker) {
         System.out.println("=== Show all items ===");
         Item[] items = tracker.findAll();
