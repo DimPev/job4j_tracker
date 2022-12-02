@@ -53,4 +53,58 @@ public class StartUITest {
         new StartUI(output).init(in, tracker, actions);
         assertThat(tracker.findById(item.getId())).isNull();
     }
+
+    @Test
+    public void whenFindById() {
+        Output output = new ConsoleOutput();
+        Tracker tracker = new Tracker();
+        Item item = tracker.add(new Item("Find by id"));
+        Input in = new StubInput(new String[]{"0", String.valueOf(item.getId()), "1"});
+        UserAction[] actions = {
+                new FindByIdAction(output),
+                new ExitAction()
+        };
+        new StartUI(output).init(in, tracker, actions);
+        assertThat(tracker.findById(item.getId()).getName()).isEqualTo("Find by id");
+    }
+
+    @Test
+    public void whenFindByName() {
+        Output output = new ConsoleOutput();
+        Tracker tracker = new Tracker();
+        Item item = tracker.add(new Item("Find by name"));
+        Input in = new StubInput(new String[]{"0", "Find by name", "1"});
+        UserAction[] actions = {
+                new FindByNameAction(output),
+                new ExitAction()
+        };
+        new StartUI(output).init(in, tracker, actions);
+        assertThat(tracker.findById(item.getId()).getName()).isEqualTo("Find by name");
+    }
+
+    @Test
+    public void whenFindAll() {
+        Output output = new StubOutput();
+        Tracker tracker = new Tracker();
+        Item item = tracker.add(new Item());
+        Item[] items = tracker.findAll();
+        Input in = new StubInput(new String[]{"0", "1"});
+        UserAction[] actions = {
+                new FindAllAction(output),
+                new ExitAction()
+        };
+        new StartUI(output).init(in, tracker, actions);
+        String ln = System.lineSeparator();
+        assertThat(output.toString()).isEqualTo(
+                "Menu." + ln
+                        + "0. Show all items" + ln
+                        + "1. Exit Program" + ln
+                        + "=== Show all items ===" + ln
+                        + items[0] + "" + ln
+                        + "Menu." + ln
+                        + "0. Show all items" + ln
+                        + "1. Exit Program" + ln
+        );
+
+    }
 }
