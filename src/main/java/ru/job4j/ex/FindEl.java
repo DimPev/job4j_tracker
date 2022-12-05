@@ -16,7 +16,6 @@ public class FindEl {
     }
 
     public static void main(String[] args) throws ElementNotFoundException {
-
         String[] strings = new String[]{"One", "two", "two", "Test", "two"};
         String name = null;
         try {
