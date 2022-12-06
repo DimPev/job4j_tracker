@@ -1,5 +1,8 @@
 package ru.job4j.ex;
 
+import ru.job4j.tracker.ConsoleOutput;
+import ru.job4j.tracker.Output;
+
 public class UserStore {
     public static User findUser(User[] users, String login) throws UserNotFoundException {
         for (User user : users) {
@@ -21,11 +24,11 @@ public class UserStore {
         User[] users = {
                 new User("Petr Arsentev", true)
         };
-        User user = null;
         try {
-            user = findUser(users, "Petr Arsentev");
+            Output out = new ConsoleOutput();
+            User user  = findUser(users, "Petr Arsentev");
             if (validate(user)) {
-                System.out.println("This user has an access");
+                out.println("This user has an access");
             }
         } catch (UserInvalidException e) {
             throw new RuntimeException(e);
