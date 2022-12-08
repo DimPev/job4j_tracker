@@ -29,7 +29,7 @@ public class PasswordValidator {
             if (!Character.isLetter(charArr[i]) && !Character.isDigit(password.charAt(i))) {
                 special = true;
             }
-            if(down && upp && haveAnumber && special){
+            if (down && upp && haveAnumber && special) {
                 break;
             }
         }
