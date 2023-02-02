@@ -34,7 +34,6 @@ public class Tracker {
         return rsla;
     }
 
-
     private int indexOf(int id) {
         int rsl = -1;
         for (Item item : items) {
