@@ -10,7 +10,7 @@ public class Tracker {
 
     public Item add(Item item) {
         item.setId(ids++);
-        items.add(item) ;
+        items.add(item);
         return item;
     }
 
@@ -37,16 +37,10 @@ public class Tracker {
 
     private int indexOf(int id) {
         int rsl = -1;
-//        for (int index = 0; index < size; index++) {
-//            if (items.get(index).getId() == id) {
-//                rsl = index;
-//                break;
-//            }
-//        }
         for (Item item : items) {
             if (items.get(size).getId() == id) {
-               rsl = size;
-               break;
+                rsl = size;
+                break;
             }
         }
         return rsl;
@@ -56,7 +50,7 @@ public class Tracker {
         int index = indexOf(id);
         boolean rsl = index != -1;
         if (rsl) {
-            items.add(index,item);
+            items.add(index, item);
             item.setId(id);
 
         }
@@ -67,9 +61,7 @@ public class Tracker {
         int index = indexOf(id);
         boolean rsl = index != -1;
         if (rsl) {
-          //  System.arraycopy(items, index + 1, items, index, size - index - 1);
-            items.remove(size );
-          //  size--;
+            items.remove(size);
         }
         return rsl;
     }
