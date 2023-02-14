@@ -15,21 +15,9 @@ public class Reduce {
     }
 
     public static void main(String[] args) {
-
-        int[] nums = {1, 2, 3};
-        int[] ans = new int[nums.length * 2];
-        int a = 0;
-        for (int i = 0; i < 2; i++) {
-            for (int j = 0; j < nums.length; j++) {
-
-                if (a > 2) {
-                    a = 0;
-                }
-                ans[a + j] = nums[a + j];
-                a += a;
-            }
-
-        }
-
+        int[] array = {1, 2, 3};
+        Reduce reduce = new Reduce();
+        reduce.to(array);
+        reduce.print();
     }
 }
