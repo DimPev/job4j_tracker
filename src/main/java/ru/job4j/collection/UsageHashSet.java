@@ -16,6 +16,5 @@ public class UsageHashSet {
         for (String auto : autos) {
             System.out.println(auto);
         }
-
     }
 }
