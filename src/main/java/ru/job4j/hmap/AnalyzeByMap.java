@@ -38,14 +38,14 @@ public class AnalyzeByMap {
                 scoreMap.merge(pup.name(), pup.score(), Integer::sum);
             }
         }
-        List<Label> Listmap = new ArrayList<>();
+        List<Label> result = new ArrayList<>();
         int amount = pupils.size();
         for (Map.Entry<String, Integer> entry : scoreMap.entrySet()) {
             String subjectName = entry.getKey();
             double averageScore = entry.getValue() / (double) amount;
-            Listmap.add(new Label(subjectName, averageScore));
+            result.add(new Label(subjectName, averageScore));
         }
-        return Listmap;
+        return result;
     }
 
     public static Label bestStudent(List<Pupil> pupils) {
