@@ -10,7 +10,6 @@ import static org.junit.Assert.assertEquals;
 public class ItemAscByNameTest {
     @Test
     public void whenSortByNameAsc() {
-        Item item = new Item();
         List<Item> items = Arrays.asList(
                 new Item("атри", 3),
                 new Item("two", 2),
@@ -24,9 +23,7 @@ public class ItemAscByNameTest {
     }
 
     @Test
-    public void ItemDescByName() {
-        Item item = new Item();
-
+    public void whenItemDescByName() {
         List<Item> items = Arrays.asList(
                 new Item("one", 1),
                 new Item("two", 2),
