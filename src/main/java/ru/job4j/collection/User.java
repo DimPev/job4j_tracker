@@ -22,11 +22,11 @@ public class User implements Comparable<User> {
 
     @Override
     public int compareTo(User o) {
-        int age = Integer.compare(this.age, o.getAge());
-        if (age != 0) {
-            return age;
+        int sName =this.name.compareTo(o.getName());
+        if (sName != 0) {
+            return sName;
         }
-        return this.name.compareTo(o.getName());
+        return Integer.compare(this.age,o.getAge());
     }
 
     @Override
